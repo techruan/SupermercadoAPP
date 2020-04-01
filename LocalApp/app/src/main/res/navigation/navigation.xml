@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/menuFragment">
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.app.supermercado.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_pesquisaProduto"
+            app:destination="@id/pesquisaProduto" />
+        <action
+            android:id="@+id/action_menuFragment_to_telaLogin"
+            app:destination="@id/telaLogin" />
+    </fragment>
+    <fragment
+        android:id="@+id/pesquisaProduto"
+        android:name="com.app.supermercado.PesquisaProduto"
+        android:label="pesquisa_produto_fragment"
+        tools:layout="@layout/pesquisa_produto_fragment" />
+    <fragment
+        android:id="@+id/telaLogin"
+        android:name="com.app.supermercado.TelaLogin"
+        android:label="tela_login_fragment"
+        tools:layout="@layout/tela_login_fragment" />
+</navigation>
