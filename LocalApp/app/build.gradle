@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'androidx.navigation.safeargs'
 
 android {
@@ -39,9 +40,13 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:29.0.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
-    //Lyfecycle
+    //Lifecycle, ViewModel e LiveData
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+
+    //Room
+    implementation "androidx.room:room-runtime:$version_room"
+    kapt "androidx.room:room-compiler:$version_room"
 
     //Tests
     testImplementation 'junit:junit:4.13'

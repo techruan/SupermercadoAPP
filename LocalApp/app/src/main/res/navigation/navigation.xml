@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/menuFragment"
-        android:name="com.app.supermercado.MenuFragment"
+        android:name="com.app.supermercado.menu.MenuFragment"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" >
         <action
@@ -19,12 +19,12 @@
     </fragment>
     <fragment
         android:id="@+id/pesquisaProduto"
-        android:name="com.app.supermercado.PesquisaProduto"
+        android:name="com.app.supermercado.consulta.PesquisaProduto"
         android:label="pesquisa_produto_fragment"
         tools:layout="@layout/pesquisa_produto_fragment" />
     <fragment
         android:id="@+id/telaLogin"
-        android:name="com.app.supermercado.TelaLogin"
+        android:name="com.app.supermercado.login.TelaLogin"
         android:label="tela_login_fragment"
         tools:layout="@layout/tela_login_fragment" />
 </navigation>

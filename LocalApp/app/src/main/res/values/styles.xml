@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="EstiloFonte">
+        <item name="android:layout_marginTop">@dimen/layout_margem</item>
+        <item name="android:paddingTop">@dimen/padding_pequeno</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/texto_tamanho</item>
+    </style>
+
 </resources>

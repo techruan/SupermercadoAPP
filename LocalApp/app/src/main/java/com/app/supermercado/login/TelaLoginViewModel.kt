@@ -1,4 +1,4 @@
-package com.app.supermercado
+package com.app.supermercado.login
 
 import androidx.lifecycle.ViewModel
 
