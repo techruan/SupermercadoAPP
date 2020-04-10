@@ -21,10 +21,19 @@
         android:id="@+id/pesquisaProduto"
         android:name="com.app.supermercado.consulta.PesquisaProduto"
         android:label="pesquisa_produto_fragment"
-        tools:layout="@layout/pesquisa_produto_fragment" />
+        tools:layout="@layout/pesquisa_produto_fragment" >
+        <action
+            android:id="@+id/action_pesquisaProduto_to_produtoDetalhes"
+            app:destination="@id/produtoDetalhes" />
+    </fragment>
     <fragment
         android:id="@+id/telaLogin"
         android:name="com.app.supermercado.login.TelaLogin"
         android:label="tela_login_fragment"
         tools:layout="@layout/tela_login_fragment" />
+    <fragment
+        android:id="@+id/produtoDetalhes"
+        android:name="com.app.supermercado.consulta.dados.ProdutoDados"
+        android:label="fragment_produto_detalhes"
+        tools:layout="@layout/fragment_produto_detalhes" />
 </navigation>

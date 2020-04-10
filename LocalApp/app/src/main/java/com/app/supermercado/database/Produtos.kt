@@ -6,6 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "produtos_table")
 data class Produtos(
+
     @PrimaryKey(autoGenerate = true)
     var idProduto: Long = 0L,
 
@@ -16,6 +17,13 @@ data class Produtos(
     var precoProduto: Double = 0.0,
 
     @ColumnInfo(name = "estoque_produto")
-    var estoqueProdutos: String = ""
+    var estoqueProdutos: String = "",
+
+    @ColumnInfo(name = "categoria_produto")
+    var categoria: String = "",
+
+    @ColumnInfo(name = "imagem_produto")
+    var imagemProduto: String = ""
+
 
 )

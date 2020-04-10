@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="produto"
+            type="com.app.supermercado.database.Produtos" />
+
+        <variable
+            name="clickListener"
+            type="com.app.supermercado.consulta.ProdutoListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="2dp"
+        app:cardElevation="10dp"
+        app:cardPreventCornerOverlap="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> clickListener.onClick(produto)}">
+
+            <ImageView
+                android:id="@+id/produto_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="Ibagen"
+                android:padding="0dp"
+                android:scaleType="fitXY"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:imgProduto="@{produto}"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/produto_nome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                tools:text="Nome do Produto"
+                android:textColor="#000"
+                android:textSize="19sp"
+                app:nomeProduto="@{produto}"
+                app:layout_constraintStart_toEndOf="@+id/produto_img"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/produto_preco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                tools:text="69,99"
+                android:textSize="15sp"
+                app:precoProduto="@{produto}"
+                app:layout_constraintStart_toEndOf="@+id/produto_img"
+                app:layout_constraintTop_toBottomOf="@+id/produto_nome" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

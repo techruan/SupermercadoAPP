@@ -3,10 +3,46 @@
     xmlns:app= "http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".consulta.PesquisaProduto">
+    <data>
+        <variable
+            name="pesquisaProdutoViewModel"
+            type="com.app.supermercado.consulta.PesquisaProdutoViewModel" />
+    </data>
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </ScrollView>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/barra_busca"
+            style="@style/EstiloFonte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_pequeno"
+            android:layout_marginEnd="@dimen/padding_pequeno"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:hint="@string/pesquisa_hint" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lista_produto"
+            style="@style/EstiloFonte"
+            android:layout_width="409dp"
+            android:layout_height="649dp"
+            android:layout_marginStart="@dimen/padding_pequeno"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="@dimen/padding_pequeno"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/barra_busca"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
