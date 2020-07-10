@@ -16,15 +16,17 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/barra_busca"
             style="@style/EstiloFonte"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="380dp"
+            android:layout_height="56dp"
             android:layout_marginStart="@dimen/padding_pequeno"
             android:layout_marginEnd="@dimen/padding_pequeno"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/testBT">
 
             <com.google.android.material.textfield.TextInputEditText
+                style="@style/EstiloFonte"
                 android:layout_width="match_parent"
                 android:layout_height="32dp"
                 android:hint="@string/pesquisa_hint" />
@@ -34,15 +36,28 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/lista_produto"
             style="@style/EstiloFonte"
-            android:layout_width="409dp"
-            android:layout_height="649dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginStart="@dimen/padding_pequeno"
-            android:layout_marginTop="1dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="@dimen/padding_pequeno"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/testBT" />
+
+        <Button
+            android:id="@+id/testBT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:onClick="@{() -> pesquisaProdutoViewModel.pesquisa()}"
+            android:text="@string/testBT"
+            app:layout_constraintBottom_toTopOf="@+id/lista_produto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/barra_busca"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            app:layout_constraintVertical_bias="0.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

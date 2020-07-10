@@ -1,29 +1,11 @@
 package com.app.supermercado.database
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-
-@Entity(tableName = "produtos_table")
 data class Produtos(
-
-    @PrimaryKey(autoGenerate = true)
-    var idProduto: Long = 0L,
-
-    @ColumnInfo(name = "nome_produto")
-    var nomeProduto: String = "",
-
-    @ColumnInfo(name = "preco_produto")
-    var precoProduto: Double = 0.0,
-
-    @ColumnInfo(name = "estoque_produto")
-    var estoqueProdutos: String = "",
-
-    @ColumnInfo(name = "categoria_produto")
-    var categoria: String = "",
-
-    @ColumnInfo(name = "imagem_produto")
-    var imagemProduto: String = ""
-
-
+    var idProduto: Long,
+    var nomeProduto: String,
+    var precoProduto: Double,
+    var estoqueProdutos: String,
+    var categoria: String,
+    var descricao: String,
+    var imagemProduto: String
 )

@@ -28,6 +28,10 @@ class MenuFragment : Fragment() {
         binding.pesquisarBt.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_menuFragment_to_pesquisaProduto)
         )
+
+        binding.loginBt.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.action_menuFragment_to_telaLogin)
+        )
         return binding.root
     }
 

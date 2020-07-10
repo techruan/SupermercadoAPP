@@ -7,33 +7,33 @@ import android.text.Html
 import android.text.Spanned
 import androidx.core.text.HtmlCompat
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import com.app.supermercado.R
 import com.app.supermercado.database.Produtos
-import com.app.supermercado.database.ProdutosDAO
+import com.app.supermercado.database.ProdutosRepositorio
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.withContext
 import java.lang.StringBuilder
 
-class PesquisaProdutoViewModel(
-    val database: ProdutosDAO, application: Application): AndroidViewModel(application) {
+class PesquisaProdutoViewModel(application: Application): AndroidViewModel(application) {
 
-    //Job e Scope pra utilizar courotines
+    //Job e Scope pra utilizar coroutines
     private var viewModelJob = Job()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
-    //Pra finalizar as courotines
+
+    //Pra finalizar as coroutines
     override fun onCleared() {
         super.onCleared()
         viewModelJob.cancel()
     }
 
-    val produtos = database.getAll()
-    val produtoString = Transformations.map(produtos){
-            produtos -> formatProdutos(produtos, application.resources)}
+    val produtosRepositorio = ProdutosRepositorio()
+    val produtos = produtosRepositorio.produtosLista
 
     //função pra formatar os produtos
     private fun formatProdutos(produtos: List<Produtos>, resources: Resources):Spanned {
@@ -52,10 +52,8 @@ class PesquisaProdutoViewModel(
         }
     }
 
-    private suspend fun insert(produto: Produtos){
-        withContext(Dispatchers.IO){
-            database.insert(produto)
-        }
+    fun pesquisa(){
+        produtosRepositorio.carregaProduto()
     }
 
     private val _navigateToProdutoDados = MutableLiveData<Long>()

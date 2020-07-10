@@ -12,11 +12,34 @@
         <Button
             android:id="@+id/pesquisarBt"
             style="@style/EstiloFonte"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/botao_largura"
+            android:layout_height="@dimen/botao_altura"
+            android:layout_marginTop="200dp"
             android:text="@string/botao_Pesquisa"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/carrinhoBt"
+            style="@style/EstiloFonte"
+            android:layout_width="@dimen/botao_largura"
+            android:layout_height="@dimen/botao_altura"
+            android:layout_marginTop="8dp"
+            android:text="@string/botao_Carrinho"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pesquisarBt" />
+
+        <Button
+            android:id="@+id/loginBt"
+            style="@style/EstiloFonte"
+            android:layout_width="@dimen/botao_largura"
+            android:layout_height="@dimen/botao_altura"
+            android:layout_marginTop="8dp"
+            android:text="@string/botao_Login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/carrinhoBt" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

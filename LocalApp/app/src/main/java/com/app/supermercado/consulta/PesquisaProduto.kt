@@ -10,7 +10,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.app.supermercado.R
-import com.app.supermercado.database.ProdutosDataBase
 import com.app.supermercado.databinding.PesquisaProdutoFragmentBinding
 
 
@@ -25,8 +24,7 @@ class PesquisaProduto : Fragment() {
             R.layout.pesquisa_produto_fragment, container, false)
 
         val application = requireNotNull(this.activity).application
-        val dataSource= ProdutosDataBase.getInstance(application).produtosDAO
-        val viewModelFactory = PesquisaProdutoViewModelFactory(dataSource, application)
+        val viewModelFactory = PesquisaProdutoViewModelFactory(application)
         val pesquisaProdutoViewModel =
             ViewModelProvider(this, viewModelFactory).get(PesquisaProdutoViewModel::class.java)
 
@@ -44,6 +42,7 @@ class PesquisaProduto : Fragment() {
             }
         })
 
+        //Observer do LiveData de produtos, que recebe a lista de itens que vão ser exibidos no RecyclerView
         pesquisaProdutoViewModel.produtos.observe(viewLifecycleOwner, Observer {
             adapter.submitList(it)
         })
