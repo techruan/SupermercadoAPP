@@ -35,25 +35,10 @@ class PesquisaProdutoViewModel(application: Application): AndroidViewModel(appli
     val produtosRepositorio = ProdutosRepositorio()
     val produtos = produtosRepositorio.produtosLista
 
-    //função pra formatar os produtos
-    private fun formatProdutos(produtos: List<Produtos>, resources: Resources):Spanned {
-        val sb = StringBuilder()
-        sb.apply {
-            append(resources.getString(R.string.app_name))
-            produtos.forEach{
-                append("<br>")
-
-            }
-        }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
-            return Html.fromHtml(sb.toString(), Html.FROM_HTML_MODE_LEGACY)
-        } else {
-            return HtmlCompat.fromHtml(sb.toString(), HtmlCompat.FROM_HTML_MODE_LEGACY)
-        }
-    }
 
     fun pesquisa(){
         produtosRepositorio.carregaProduto()
+
     }
 
     private val _navigateToProdutoDados = MutableLiveData<Long>()

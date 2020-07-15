@@ -5,5 +5,7 @@
     <string name="botao_Carrinho">Consultar Carrinho</string>
     <string name="botao_Login">Fazer Login</string>
     <string name="testBT">Pesquisar</string>
+    <string name="idTxt">Nome de Usuario:</string>
+    <string name="senhaTxt">Senha:</string>
 
 </resources>

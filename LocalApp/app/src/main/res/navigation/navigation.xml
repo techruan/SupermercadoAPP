@@ -36,4 +36,9 @@
         android:name="com.app.supermercado.consulta.dados.ProdutoDados"
         android:label="fragment_produto_detalhes"
         tools:layout="@layout/fragment_produto_detalhes" />
+    <fragment
+        android:id="@+id/carrinho"
+        android:name="com.app.supermercado.carrinho.Carrinho"
+        android:label="carrinho_fragment"
+        tools:layout="@layout/carrinho_fragment" />
 </navigation>

@@ -51,8 +51,8 @@ dependencies {
     kapt "androidx.room:room-compiler:$version_room"
 
     //Navigation
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
 
     //RecyclerView
     implementation 'com.android.support:recyclerview-v7:29.0.0'
