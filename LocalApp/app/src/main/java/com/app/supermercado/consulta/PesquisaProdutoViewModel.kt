@@ -1,15 +1,22 @@
 package com.app.supermercado.consulta
 
 import android.app.Application
+import android.app.PendingIntent.getActivity
 import android.content.res.Resources
 import android.os.Build
 import android.text.Html
 import android.text.Spanned
+import android.util.Log
 import androidx.core.text.HtmlCompat
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
+import com.app.supermercado.MainActivity
 import com.app.supermercado.R
 import com.app.supermercado.database.Produtos
 import com.app.supermercado.database.ProdutosRepositorio
@@ -38,6 +45,7 @@ class PesquisaProdutoViewModel(application: Application): AndroidViewModel(appli
 
     fun pesquisa(){
         produtosRepositorio.carregaProduto()
+
 
     }
 

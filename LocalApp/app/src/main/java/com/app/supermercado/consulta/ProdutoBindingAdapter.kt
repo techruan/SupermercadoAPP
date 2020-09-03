@@ -13,14 +13,14 @@ Essa Classe serve para fazer o binding dos itens utilizando o BindingAdapter
 @BindingAdapter("nomeProduto")
 fun TextView.setProdutoNome(item: Produtos?){
     item?.let {
-        text = produto_nome.toString()
+        text = item.nomeProduto.toString()
     }
 }
 
 @BindingAdapter("precoProduto")
 fun TextView.setProdutoPreco(item: Produtos?){
     item?.let {
-        text = produto_preco.toString()
+        text = item.precoProduto.toString()
     }
 }
 

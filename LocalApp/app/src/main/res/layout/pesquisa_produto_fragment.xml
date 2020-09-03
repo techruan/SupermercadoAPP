@@ -27,6 +27,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 style="@style/EstiloFonte"
+                android:id="@+id/campo_pesquisa"
                 android:layout_width="match_parent"
                 android:layout_height="32dp"
                 android:hint="@string/pesquisa_hint" />
